@@ -27,6 +27,7 @@ body {
   min-width: 800px;
   position: relative;
   padding-top: 60px;
+
 }
 h1 {
   font-family: "Raleway", "Arial", sans-serif;
@@ -35,17 +36,24 @@ h1 {
   line-height: 136.18px;
   letter-spacing: 0.035em;
   text-align: center;
-  width: 100%;
   text-transform: uppercase;
   position: static;
   margin: 0 auto;
+  max-width: 720px;
 }
-
+.layer::before{
+  content:"";
+  position: absolute;
+  background-color: rgb(255 255 255 / 0.3);
+  inset: 0;
+  z-index: -1;
+}
 h1::after {
   content: "*";
 }
 h1:hover {
   color: #4c4c4c;
+  cursor: default;
 }
 
 video {
@@ -56,7 +64,7 @@ video {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: -1;
+  z-index: -2;
 }
 
 .page__heading:hover::before {
@@ -80,4 +88,5 @@ video {
   color: #000000;
   top: 180px;
   right:20px;
+  z-index: 1;
 }
